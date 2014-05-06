@@ -5,6 +5,7 @@ public class LSIVendor implements VendorFee {
 	double fee = 0.00;
 	double cummulativeFee = 0.00;
 
+	// Calculates vendor fees depending upon the project amount
 	public double calcFee(double amt) {
 
 		if (amt < 100000 || amt == 100000) {

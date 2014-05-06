@@ -8,7 +8,7 @@ import org.junit.Test;
 
 public class LSIVendorTest {
 
-	// TEst fixtures
+	// Test fixtures
 	private LSIVendor lsiVendor;
 	public double amt1, amt2, cummulativeFee1, cummulativeFee2;
 	
@@ -19,7 +19,7 @@ public class LSIVendorTest {
 	public void setUp() throws Exception {
 		
 		lsiVendor = new LSIVendor();
-		
+		// the example values to confirm the testing and calculations as such
 		amt1 = 50000;
 		amt2 = 200000;
 		cummulativeFee1 = 10000;
