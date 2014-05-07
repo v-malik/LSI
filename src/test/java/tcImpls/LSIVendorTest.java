@@ -10,7 +10,7 @@ public class LSIVendorTest {
 
 	// Test fixtures
 	private LSIVendor lsiVendor;
-	public double amt1, amt2, amt400k, amt600k, cummuFee10k, cummuFee300k, cummuFee400k, cummuFee600k;
+	public double amt1, amt2, amt400k, amt600k, cummuFee10k, cummuFee15k, cummuFee300k, cummuFee400k, cummuFee600k;
 	
 	// needed to compare floats
 	private static final double DELTA = 1e-15;
@@ -30,6 +30,8 @@ public class LSIVendorTest {
 		// lets introduce and test a couple of vendor fee ranges here
 		cummuFee400k = 50000;
 		cummuFee600k = 65000;
+		
+		cummuFee15k = 15000;
 	}
 
 	@After
@@ -45,5 +47,11 @@ public class LSIVendorTest {
 		
 		assertEquals("error in the method calcFee", cummuFee400k, lsiVendor.calcFee(amt400k), DELTA);
 		assertEquals("error in the method calcFee", cummuFee600k, lsiVendor.calcFee(amt600k), DELTA);
+	}
+	
+	@Test
+	public void testCalcFeeOnToDateBasis(){
+		
+		assertEquals("error in the method calcFee", cummuFee15k, lsiVendor.calcFeeOnToDateBasis(amt400k, amt2), DELTA);
 	}
 }
